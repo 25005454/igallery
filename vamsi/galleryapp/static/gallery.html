@@ -1,0 +1,45 @@
+<html>
+<head>
+    
+    <title>Interactive Image Gallery</title> 
+    <link rel="stylesheet" href="gallery.css">
+</head>  
+<body> 
+<div class="gallery-container"> 
+<img id="galleryImage" class="gallery-image" src="2 ph.png" height="10%" width="10%"> 
+<div id="caption" class="caption">Caption for Image 1</div> 
+<div class="gallery-buttons"> 
+<button onclick="prevImage()">Previous</button> 
+<button onclick="nextImage()">Next</button> 
+</div> 
+</div> 
+<script> 
+const images = [ 
+{ src: "2 ph.png", caption: "Caption for Image 1" }, 
+{ src: "3 ph.png", caption: "Caption for Image 2" }, 
+{ src: "Screenshot 2025-12-27 085333.png", caption: "Caption for Image 3" }, 
+{ src: "Screenshot 2025-12-27 084903.png", caption: "Caption for Image 4" } 
+]; 
+let currentIndex = 0; 
+function updateGallery( )  
+{ 
+document.getElementById("galleryImage").src = images[currentIndex].src; 
+document.getElementById("caption").textContent = images[currentIndex].caption; 
+} 
+function nextImage( )  
+{ 
+currentIndex = (currentIndex + 1) % images.length; 
+updateGallery( ); 
+} 
+function prevImage( )  
+{ 
+currentIndex = (currentIndex - 1 + images.length) % images.length; 
+updateGallery( ); 
+} 
+</script> 
+
+<footer>
+     E.vamsi krishna (25005454)
+</footer>
+</body>
+</html>
